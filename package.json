@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/dyami0123/ThreeVault#readme",
   "dependencies": {
+    "marked": "^15.0.7",
     "three": "^0.173.0",
     "tweakpane": "^4.0.5"
   },

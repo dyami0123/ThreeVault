@@ -8,6 +8,8 @@ export interface Note {
     coordinates: Vector3;
     rotation: Vector3;
     scale: number;
+
+    content?: string;
 }
 
 export class SimpleNote implements Note {
@@ -17,11 +19,15 @@ export class SimpleNote implements Note {
     rotation: Vector3;
     scale: number;
 
-    constructor(name: string, coordinates: Vector3, rotation: Vector3, scale: number) {
+    content?: string;
+
+    constructor(name: string, coordinates: Vector3, rotation: Vector3, scale: number, content?: string) {
         this.name = name;
         this.coordinates = coordinates;
         this.rotation = rotation;
         this.scale = scale;
+
+        this.content = content;
     }
 
     static new(name: string) {
@@ -30,6 +36,15 @@ export class SimpleNote implements Note {
         const rotation = new Vector3(0, 0, 0);
         const scale = 1;
 
-        return new SimpleNote(name, coordinates, rotation, scale);
+        const content = `
+        # Hello World
+
+        This is a note.
+
+        :)
+
+        `;
+
+        return new SimpleNote(name, coordinates, rotation, scale, content);
     }
 }

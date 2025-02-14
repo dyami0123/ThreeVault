@@ -17,16 +17,20 @@ class rotationState {
     yMultiplier: number;
     zMultiplier: number;
 
+    scale: number;
+
     constructor() {
         this.xMultiplier = 0;
         this.yMultiplier = 0;
         this.zMultiplier = 0;
+        this.scale = 1;
     }
 
     reset() {
         this.xMultiplier = 0;
         this.yMultiplier = 0;
         this.zMultiplier = 0;
+        this.scale = 1;
     }
 
     setRandom() {
@@ -58,6 +62,10 @@ rotationFolder.addBinding(rotationStateInstance, 'yMultiplier', { min: -1, max: 
 rotationFolder.addBinding(rotationStateInstance, 'zMultiplier', { min: -1, max: 1 })
     .on('change', (ev) => {
         rotationStateInstance.zMultiplier = ev.value
+    });
+rotationFolder.addBinding(rotationStateInstance, 'scale', { min: 0.1, max: 5 })
+    .on('change', (ev) => {
+        rotationStateInstance.scale = ev.value
     });
 
 
@@ -97,6 +105,8 @@ function animate() {
     noteManipulator.rotateX(0.01 * rotationStateInstance.xMultiplier);
     noteManipulator.rotateY(0.01 * rotationStateInstance.yMultiplier);
     noteManipulator.rotateZ(0.001 * rotationStateInstance.zMultiplier);
+
+    noteManipulator.set_scale(rotationStateInstance.scale);
 
     renderer.render(scene, camera);
 

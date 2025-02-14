@@ -53,6 +53,16 @@ export class NoteManipulator {
                 geometry.scale(note.scale, note.scale, note.scale);
             });
         }
+    }  
+
+    set_scale(scale: number) {
+        for (let note of this.notes) {
+            const required_adjustment = scale / note.scale;
+            note.scale = scale;
+            getGeometriesByNoteName(note, this.scene).forEach((geometry) => {
+                geometry.scale(required_adjustment, required_adjustment, required_adjustment);
+            });
+        }
     }
 
     translate(note: Note, x: number, y: number, z: number) {
