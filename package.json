@@ -1,0 +1,30 @@
+{
+  "name": "threevault",
+  "version": "1.0.0",
+  "description": "a 3d viewer for an obsidian vault",
+  "main": "src/main.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dyami0123/ThreeVault.git"
+  },
+  "author": "Dyami Andrews",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dyami0123/ThreeVault/issues"
+  },
+  "homepage": "https://github.com/dyami0123/ThreeVault#readme",
+  "dependencies": {
+    "three": "^0.173.0",
+    "tweakpane": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/three": "^0.173.0",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0"
+  }
+}
